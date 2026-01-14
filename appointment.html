@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="lo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ນັດຫມົດປຶກສາກັບທະນາຍຄວາມຟຣີ | ທະນາກິດ ແລະ ພາກສ່ວນ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary-color: #1a3a5f;
+            --secondary-color: #d4af37;
+            --light-color: #f8f9fa;
+            --dark-color: #333;
+            --gray-color: #6c757d;
+            --success-color: #28a745;
+            --error-color: #dc3545;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo h1 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-left: 10px;
+        }
+        
+        .logo .scale {
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+        }
+        
+        .back-button {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+        }
+        
+        .back-button i {
+            margin-right: 5px;
+        }
+        
+        .appointment-hero {
+            background: linear-gradient(rgba(26, 58, 95, 0.9), rgba(26, 58, 95, 0.8)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin-bottom: 40px;
+        }
+        
+        .appointment-hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .appointment-hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .appointment-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        @media (max-width: 768px) {
+            .appointment-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .appointment-form {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .form-title {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light-color);
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .required::after {
+            content: " *";
+            color: var(--error-color);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(26, 58, 95, 0.1);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        @media (max-width: 480px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        select.form-control {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%231a3a5f' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 12px;
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #b8941f;
+        }
+        
+        .submit-btn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .appointment-info {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        .info-title {
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light-color);
+        }
+        
+        .info-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .info-list li {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .info-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .info-list i {
+            color: var(--secondary-color);
+            margin-right: 15px;
+            margin-top: 3px;
+            font-size: 1.1rem;
+        }
+        
+        .contact-methods {
+            background-color: #f8f9fa;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+        
+        .contact-methods h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .contact-methods p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-methods i {
+            color: var(--secondary-color);
+            margin-right: 10px;
+            width: 20px;
+        }
+        
+        .lawyers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .lawyer-card {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            transition: transform 0.3s;
+        }
+        
+        .lawyer-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .lawyer-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 4px solid white;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .lawyer-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .lawyer-card p {
+            color: var(--gray-color);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .specialty {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 5px;
+        }
+        
+        /* Modal สำหรับการยืนยัน */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            animation: modalFade 0.3s;
+        }
+        
+        @keyframes modalFade {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .modal-icon {
+            font-size: 4rem;
+            color: var(--success-color);
+            margin-bottom: 20px;
+        }
+        
+        .modal h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .modal p {
+            margin-bottom: 25px;
+            color: var(--gray-color);
+        }
+        
+        .modal button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        
+        .modal button:hover {
+            background-color: #0f2742;
+        }
+        
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .copyright {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+        
+        .error-message {
+            color: var(--error-color);
+            font-size: 0.9rem;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        .form-control.error {
+            border-color: var(--error-color);
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: var(--primary-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <div class="scale">⚖️</div>
+                <h1>ທະນາກິດ ແລະ ພາກສ່ວນ</h1>
+            </a>
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> ກັບໄປໜ້າຫຼັກ
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="appointment-hero">
+        <div class="container">
+            <h2>ນັດຫມົດປຶກສາກັບທະນາຍຄວາມຟຣີ</h2>
+            <p>ຮັບຄໍາປຶກສາກົດໝາຍເບື້ອງຕົ້ນ ບໍ່ມີຄ່າໃຊ້ຈ່າຍ ຈາກທີມທະນາຍຄວາມຜູ້ຊ່ວຍເຫຼືອ</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="appointment-container">
+            <!-- Form Section -->
+            <div class="appointment-form">
+                <h2 class="form-title">ກອກຂໍ້ມູນການນັດຫມົດ</h2>
+                
+                <form id="appointmentForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName" class="form-label required">ຊື່</label>
+                            <input type="text" id="firstName" class="form-control" placeholder="ສົມໃຈ">
+                            <div class="error-message" id="firstNameError">ກະລຸນາປ້ອນຊື່</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="lastName" class="form-label required">ນາມສະກຸນ</label>
+                            <input type="text" id="lastName" class="form-control" placeholder="ໃຈດີ">
+                            <div class="error-message" id="lastNameError">ກະລຸນາປ້ອນນາມສະກຸນ</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone" class="form-label required">ໂທລະສັບ</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="081-234-5678">
+                            <div class="error-message" id="phoneError">ກະລຸນາປ້ອນໝາຍເບີໂທທີ່ຖືກຕ້ອງ</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label required">ອີເມວ</label>
+                            <input type="email" id="email" class="form-control" placeholder="name@example.com">
+                            <div class="error-message" id="emailError">ກະລຸນາປ້ອນອີເມວທີ່ຖືກຕ້ອງ</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="caseType" class="form-label required">ປະເພດຄະດີທີ່ຕ້ອງການປຶກສາ</label>
+                        <select id="caseType" class="form-control">
+                            <option value="">-- ເລືອກປະເພດຄະດີ --</option>
+                            <option value="criminal">ກົດໝາຍອານາຄ</option>
+                            <option value="family">ກົດໝາຍຄອບຄົວແລະມຣະດກ</option>
+                            <option value="business">ກົດໝາຍທຸລະກິດແລະສັນຍາ</option>
+                            <option value="labor">ກົດໝາຍແຮງງານ</option>
+                            <option value="property">ກົດໝາຍສິດທິຊັບພັນແລະດິນ</option>
+                            <option value="other">ອື່ນໆ</option>
+                        </select>
+                        <div class="error-message" id="caseTypeError">ກະລຸນາເລືອກປະເພດຄະດີ</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="preferredLawyer" class="form-label">ຕ້ອງການປຶກສາກັບທະນາຍຄວາມ (ຖ້າມີ)</label>
+                        <select id="preferredLawyer" class="form-control">
+                            <option value="">-- ເລືອກທະນາຍຄວາມ --</option>
+                            <option value="somchai">ທະນາຍຄວາມສົມໃຈ (ກົດໝາຍອານາຄ)</option>
+                            <option value="sumitra">ທະນາຍຄວາມສຸມິດຕຣາ (ກົດໝາຍຄອບຄົວ)</option>
+                            <option value="thana">ທະນາຍຄວາມທະນາ (ກົດໝາຍທຸລະກິດ)</option>
+                            <option value="any">ທະນາຍຄວາມໃດໜຶ່ງ</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="preferredDate" class="form-label required">ວັນທີ່ຕ້ອງການນັດ</label>
+                            <input type="date" id="preferredDate" class="form-control" min="">
+                            <div class="error-message" id="dateError">ກະລຸນາເລືອກວັນທີ</div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="preferredTime" class="form-label required">ເວລາທີ່ຕ້ອງການນັດ</label>
+                            <select id="preferredTime" class="form-control">
+                                <option value="">-- ເລືອກເວລາ --</option>
+                                <option value="09:00">09:00 - 10:00</option>
+                                <option value="10:00">10:00 - 11:00</option>
+                                <option value="11:00">11:00 - 12:00</option>
+                                <option value="13:00">13:00 - 14:00</option>
+                                <option value="14:00">14:00 - 15:00</option>
+                                <option value="15:00">15:00 - 16:00</option>
+                                <option value="16:00">16:00 - 17:00</option>
+                            </select>
+                            <div class="error-message" id="timeError">ກະລຸນາເລືອກເວລາ</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="consultationMethod" class="form-label required">ວິທີຮັບຄໍາປຶກສາ</label>
+                        <select id="consultationMethod" class="form-control">
+                            <option value="">-- ເລືອກວິທີປຶກສາ --</option>
+                            <option value="office">ພົບປະທີ່ສຳນັກງານ</option>
+                            <option value="online">ປຶກສາອອນລາຍ (Zoom/Skype)</option>
+                            <option value="phone">ປຶກສາທາງໂທລະສັບ</option>
+                        </select>
+                        <div class="error-message" id="methodError">ກະລຸນາເລືອກວິທີປຶກສາ</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="caseDetails" class="form-label required">ລາຍລະອຽດຂອງບັນຫາ ຫຼື ຄໍາຖາມ</label>
+                        <textarea id="caseDetails" class="form-control" placeholder="ກະລຸນາອະທິບາຍບັນຫາຫຼືຄໍາຖາມສັ້ນ"></textarea>
+                        <div class="error-message" id="detailsError">ກະລຸນາປ້ອນລາຍລະອຽດ</div>
+                    </div>
+                    
+                        <div class="loading" id="formLoading">
+                        <div class="spinner"></div>
+                        <p>ກຳລັງສົ່ງຂໍ້ມູນ...</p>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <i class="fas fa-calendar-check"></i> ສົ່ງຄໍາຮ້ອງນັດ
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Information Section -->
+            <div class="appointment-info">
+                <h2 class="info-title">ຂໍ້ມູນການນັດຫມົດ</h2>
+                
+                <ul class="info-list">
+                    <li>
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <strong>ເວລາທຳງານສໍາລັບການນັດ</strong>
+                            <p>ຈັນ - ສຸກ: 9:00 - 17:00<br>ເສົາ: 9:00 - 12:00<br>ປິດວັນອາທິດແລະວັນພັກຊາດ</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-comments"></i>
+                        <div>
+                            <strong>ການປຶກສາຟຣີຄອບຄຸ່ມ</strong>
+                            <p>ວິເຄາະເບື້ອງຕົ້ນ ແນະນຳແນວທາງແກ້ໄຂ ແລະ ລາຍລະອຽດເອກະສານທີ່ຈໍາເປັນ</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-user-tie"></i>
+                        <div>
+                            <strong>ຫຼັງການນັດ</strong>
+                            <p>ພວກເຮົາຈະຕິດຕໍ່ກັບທ່ານພາຍໃນ 24 ຊົ່ວໂມງເພື່ອຢືນຢັນການນັດ ແລະແຈ້ງຊື່ທະນາຍຄວາມທີ່ເໝາະສົມ</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-file-contract"></i>
+                        <div>
+                            <strong>ການຕຽມຕົວ</strong>
+                            <p>ກະລຸນານຳເອກະສານທີ່ກ່ຽວຂ້ອງ (ຖ້າມີ) ມາໃນວັນນັດເພື່ອໃຫ້ທະນາຍຄວາມສາມາດປຶກສາໄດ້ຢ່າງມີປະສິດທິພາບ</p>
+                        </div>
+                    </li>
+                </ul>
+                
+                <div class="contact-methods">
+                    <h4>ຊ່ອງທາງຕິດຕໍ່ອື່ນໆ</h4>
+                    <p><i class="fas fa-phone"></i> ໂທລະສັບ: 02-123-4567 (ຈັນ-ສຸກ 8:30-17:30)</p>
+                    <p><i class="fas fa-envelope"></i> ອີເມວ: appointment@thanakitlaw.com</p>
+                    <p><i class="fab fa-line"></i> Line ID: @thanakitlaw</p>
+                    <p><i class="fas fa-map-marker-alt"></i> ທີ່ຢູ່: 123 ອາຄານສູນກົດໝາຍ ຖະນົມຣາດຳຣິ, ບ້ານລຸມພິນີ, ເມືອງປົທຸມວັນ, 10330</p>
+                </div>
+                
+                <h3 style="margin-top: 40px; color: var(--primary-color);">ທະນາຍຄວາມຜູ້ຊ່ຽວຊານຂອງເຮົາ</h3>
+                <div class="lawyers-grid">
+                    <div class="lawyer-card">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="ทนายความสมชาย">
+                        <h4>ທະນາຍຄວາມສົມໃຈ</h4>
+                        <p>ປະສົບການ 15 ປີ</p>
+                        <div class="specialty">ກົດໝາຍອານາຄ</div>
+                    </div>
+                    
+                    <div class="lawyer-card">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=688&q=80" alt="ทนายความสุมิตรา">
+                        <h4>ທະນາຍຄວາມສຸມິດຕຣາ ສີສວ່າງ</h4>
+                        <p>ປະສົບການ 12 ປີ</p>
+                        <div class="specialty">ກົດໝາຍຄອບຄົວ</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>ສົ່ງຄໍາຮ້ອງນັດສໍາເລັດ!</h3>
+            <p>ພວກເຮົາຈະຕິດຕໍ່ກັບທ່ານພາຍໃນ 24 ຊົ່ວໂມງເພື່ອຢືນຢັນການນັດແລະລາຍລະອຽດເພີ່ມເຕີມ</p>
+            <p id="appointmentDetails" style="text-align: left; background-color: #f8f9fa; padding: 15px; border-radius: 6px; margin: 20px 0;"></p>
+            <button id="closeModal">ປິດ</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">ໜ້າຫຼັກ</a>
+                <a href="about.html">ກ່ຽວກັບເຮົາ</a>
+                <a href="services.html">ບໍລິການຂອງເຮົາ</a>
+                <a href="team.html">ທີມທະນາຍຄວາມ</a>
+                <a href="contact.html">ຕິດຕໍ່ເຮົາ</a>
+            </div>
+            <p class="copyright">© 2023 ບໍລິສັດທະນາຍຄວາມ ທະນາກິດ ແລະ ພາກສ່ວນ. ສິດທິທັງໝົດ.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ตั้งค่าวันที่ขั้นต่ำเป็นวันพรุ่งนี้
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date();
+            const tomorrow = new Date(today);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            
+            // Format เป็น YYYY-MM-DD
+            const minDate = tomorrow.toISOString().split('T')[0];
+            document.getElementById('preferredDate').min = minDate;
+            
+            // ตั้งค่าวันเริ่มต้นเป็นพรุ่งนี้
+            document.getElementById('preferredDate').value = minDate;
+        });
+        
+        // ฟังก์ชันตรวจสอบฟอร์ม
+        function validateForm() {
+            let isValid = true;
+            
+            // รีเซ็ต error
+            document.querySelectorAll('.error-message').forEach(el => {
+                el.style.display = 'none';
+            });
+            document.querySelectorAll('.form-control').forEach(el => {
+                el.classList.remove('error');
+            });
+            
+            // ตรวจสอบฟิลด์ required
+            const requiredFields = [
+                {id: 'firstName', errorId: 'firstNameError', message: 'ກະລຸນາປ້ອນຊື່'},
+                {id: 'lastName', errorId: 'lastNameError', message: 'ກະລຸນາປ້ອນນາມສະກຸນ'},
+                {id: 'phone', errorId: 'phoneError', message: 'ກະລຸນາປ້ອນໝາຍເບີໂທ'},
+                {id: 'email', errorId: 'emailError', message: 'ກະລຸນາປ້ອນອີເມວທີ່ຖືກຕ້ອງ'},
+                {id: 'caseType', errorId: 'caseTypeError', message: 'ກະລຸນາເລືອກປະເພດຄະດີ'},
+                {id: 'preferredDate', errorId: 'dateError', message: 'ກະລຸນາເລືອກວັນທີ'},
+                {id: 'preferredTime', errorId: 'timeError', message: 'ກະລຸນາເລືອກເວລາ'},
+                {id: 'consultationMethod', errorId: 'methodError', message: 'ກະລຸນາເລືອກວິທີປຶກສາ'},
+                {id: 'caseDetails', errorId: 'detailsError', message: 'ກະລຸນາປ້ອນລາຍລະອຽດ'}
+            ];
+            
+            requiredFields.forEach(field => {
+                const element = document.getElementById(field.id);
+                const errorElement = document.getElementById(field.errorId);
+                
+                if (!element.value.trim()) {
+                    element.classList.add('error');
+                    errorElement.textContent = field.message;
+                    errorElement.style.display = 'block';
+                    isValid = false;
+                }
+            });
+            
+            // ตรวจสอบอีเมล
+            const email = document.getElementById('email').value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email && !emailRegex.test(email)) {
+                document.getElementById('email').classList.add('error');
+                document.getElementById('emailError').textContent = 'ກະລຸນາປ້ອນອີເມວທີ່ຖືກຕ້ອງ';
+                document.getElementById('emailError').style.display = 'block';
+                isValid = false;
+            }
+            
+            // ตรวจสอบเบอร์โทรศัพท์
+            const phone = document.getElementById('phone').value;
+            const phoneRegex = /^[0-9\-+]{9,15}$/;
+            if (phone && !phoneRegex.test(phone.replace(/\s/g, ''))) {
+                document.getElementById('phone').classList.add('error');
+                document.getElementById('phoneError').textContent = 'ກະລຸນາປ້ອນໝາຍເບີໂທທີ່ຖືກຕ້ອງ';
+                document.getElementById('phoneError').style.display = 'block';
+                isValid = false;
+            }
+            
+            return isValid;
+        }
+        
+        // จัดการการส่งฟอร์ม
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (!validateForm()) {
+                return;
+            }
+            
+            // แสดง loading
+            document.getElementById('formLoading').style.display = 'block';
+            document.getElementById('submitBtn').disabled = true;
+            
+            // สมมติว่าเก็บข้อมูล (ในเว็บจริงจะส่งไปยังเซิร์ฟเวอร์)
+            setTimeout(function() {
+                // ซ่อน loading
+                document.getElementById('formLoading').style.display = 'none';
+                document.getElementById('submitBtn').disabled = false;
+                
+                // เก็บข้อมูลฟอร์ม
+                const formData = {
+                    firstName: document.getElementById('firstName').value,
+                    lastName: document.getElementById('lastName').value,
+                    phone: document.getElementById('phone').value,
+                    email: document.getElementById('email').value,
+                    caseType: document.getElementById('caseType').value,
+                    preferredLawyer: document.getElementById('preferredLawyer').value,
+                    preferredDate: document.getElementById('preferredDate').value,
+                    preferredTime: document.getElementById('preferredTime').value,
+                    consultationMethod: document.getElementById('consultationMethod').value,
+                    caseDetails: document.getElementById('caseDetails').value
+                };
+                
+                // สร้างข้อความสรุปการนัดหมาย
+                const caseTypeText = {
+                    'criminal': 'ກົດໝາຍອານາຄ',
+                    'family': 'ກົດໝາຍຄອບຄົວແລະມຣະດກ',
+                    'business': 'ກົດໝາຍທຸລະກິດແລະສັນຍາ',
+                    'labor': 'ກົດໝາຍແຮງງານ',
+                    'property': 'ກົດໝາຍສິດທິຊັບພັນແລະດິນ',
+                    'other': 'ອື່ນໆ'
+                }[formData.caseType] || formData.caseType;
+                
+                const lawyerText = {
+                    'somchai': 'ທະນາຍຄວາມສົມໃຈ',
+                    'sumitra': 'ທະນາຍຄວາມສຸມິດຕຣາ',
+                    'thana': 'ທະນາຍຄວາມທະນາ',
+                    'any': 'ທະນາຍຄວາມໃດໜຶ່ງ',
+                    '': 'ບໍ່ລະບຸ'
+                }[formData.preferredLawyer] || formData.preferredLawyer;
+                
+                const methodText = {
+                    'office': 'ພົບປະທີ່ສຳນັກງານ',
+                    'online': 'ປຶກສາອອນລາຍ',
+                    'phone': 'ປຶກສາທາງໂທລະສັບ'
+                }[formData.consultationMethod] || formData.consultationMethod;
+                
+                // แปลงวันที่เป็นรูปแบบไทย
+                const dateObj = new Date(formData.preferredDate);
+                const thaiDate = dateObj.toLocaleDateString('th-TH', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                
+                // แสดงข้อมูลใน modal
+                const detailsHtml = `
+                    <strong>ຊື່-ນາມສະກຸນ:</strong> ${formData.firstName} ${formData.lastName}<br>
+                    <strong>ໂທລະສັບ:</strong> ${formData.phone}<br>
+                    <strong>ອີເມວ:</strong> ${formData.email}<br>
+                    <strong>ປະເພດຄະດີ:</strong> ${caseTypeText}<br>
+                    <strong>ທະນາຍຄວາມທີ່ຕ້ອງການ:</strong> ${lawyerText}<br>
+                    <strong>ວັນທີ່ນັດ:</strong> ${thaiDate}<br>
+                    <strong>ເວລານັດ:</strong> ${formData.preferredTime}<br>
+                    <strong>ວິທີປຶກສາ:</strong> ${methodText}
+                `;
+                
+                document.getElementById('appointmentDetails').innerHTML = detailsHtml;
+                
+                // แสดง modal
+                document.getElementById('successModal').style.display = 'flex';
+                
+                // รีเซ็ตฟอร์ม
+                document.getElementById('appointmentForm').reset();
+                
+                // ตั้งค่าวันที่ใหม่
+                const today = new Date();
+                const tomorrow = new Date(today);
+                tomorrow.setDate(tomorrow.getDate() + 1);
+                const minDate = tomorrow.toISOString().split('T')[0];
+                document.getElementById('preferredDate').value = minDate;
+                
+            }, 1500); // สมมติว่า delay 1.5 วินาที
+        });
+        
+        // ปิด modal
+        document.getElementById('closeModal').addEventListener('click', function() {
+            document.getElementById('successModal').style.display = 'none';
+        });
+        
+        // ปิด modal เมื่อคลิกนอก modal
+        window.addEventListener('click', function(e) {
+            const modal = document.getElementById('successModal');
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+        
+        // แปลงเบอร์โทรศัพท์อัตโนมัติ
+        document.getElementById('phone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length > 3 && value.length <= 6) {
+                value = value.replace(/(\d{3})(\d{0,3})/, '$1-$2');
+            } else if (value.length > 6) {
+                value = value.replace(/(\d{3})(\d{3})(\d{0,4})/, '$1-$2-$3');
+            }
+            e.target.value = value;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="lo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ບໍລິສັດທະນາຍຄວາມ ທະນາກິດ ແລະພ່ອມ partners | ໃຫ້ຄໍາປຶກສາດ້ານກົດໝາຍຄົບວົງຈອນ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary-color: #1a3a5f;
+            --secondary-color: #d4af37;
+            --light-color: #f8f9fa;
+            --dark-color: #333;
+            --gray-color: #6c757d;
+        }
+        
+        body {
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo h1 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-left: 10px;
+        }
+        
+        .logo .scale {
+            color: var(--secondary-color);
+            font-size: 2rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .cta-button {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #b8941f;
+            color: white;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .lang-toggle { display: flex; gap: 8px; align-items: center; }
+        .lang-toggle button { background: transparent; border: 1px solid var(--primary-color); color: var(--primary-color); padding: 6px 10px; border-radius: 4px; cursor: pointer; }
+        .lang-toggle button.active { background: var(--primary-color); color: white; }
+        
+        /* Nav language spans (default: Lao shown) */
+        .nav-lo { display: inline; }
+        .nav-th { display: none; }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(26, 58, 95, 0.9), rgba(26, 58, 95, 0.8)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        /* Services Section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--gray-color);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 2.5rem;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        .service-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        /* Team Section */
+        .team {
+            padding: 80px 0;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-member {
+            text-align: center;
+        }
+        
+        .team-member img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        
+        .team-member h4 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+        
+        .team-member p {
+            color: var(--gray-color);
+            font-style: italic;
+        }
+        
+        /* Contact Form */
+        .contact {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+        
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+        
+        .contact-detail i {
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .contact-form button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .contact-form button:hover {
+            background-color: #0f2742;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-col ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 80px 0;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        .lang { display: none; }
+        .lang.show { display: block; }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="scale">⚖️</div>
+                <h1>Consultancy law Co.,Ltd</h1>
+            </div>
+
+            <div class="lang-toggle" aria-hidden="false">
+                <button id="btn-lo" data-lang="lo" class="active">ລາວ</button>
+                <button id="btn-en" data-lang="en">EN</button>
+            </div>
+            
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html"><span class="nav-lo">ໜ້າຫຼັກ</span><span class="nav-th">Home</span></a></li>
+                    <li><a href="about.html"><span class="nav-lo">ເກີວກັບພວກເຮົາ</span><span class="nav-th">About</span></a></li>
+                    <li><a href="services.html"><span class="nav-lo">ບໍລິການ</span><span class="nav-th">Services</span></a></li>
+                    <li><a href="team.html"><span class="nav-lo">ທີມ</span><span class="nav-th">Team</span></a></li>
+                    <li><a href="contact.html"><span class="nav-lo">ຕິດຕໍ່</span><span class="nav-th">Contact</span></a></li>
+                    <li><a href="appointment.html" class="cta-button"><span class="nav-lo">ນັດຫມາຍປຶກສາຟຣີ</span><span class="nav-th">Book Free Consultation</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page content: two language blocks (Lao and English). Show only one by JS -->
+    <!-- Lao content -->
+    <main id="content-lo" class="lang show" data-lang="lo">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <h2>ທະນາຍຄວາມມືອາຊີບ ໃຫ້ຄໍາປຶກສາດ້ານກົດໝາຍຄົບວົງຈອນ</h2>
+                <p>ພວກເຮົາມີປະສົບການກວ່າ 20 ປີ ໃນການໃຫ້ບໍລິການກົດໝາຍທຸກດ້ານ ດ້ວຍທີມທະນາຍຄວາມຜູ່ຊ່ຽວຊານ</p>
+                <a href="#contact" class="cta-button">ປຶກສາທະນາຍຄວາມຟຣີ</a>
+                <!-- ใน Hero Section -->
+                <a href="appointment.html" class="cta-button">ນັດຫມາຍປຶກສາຟຣີມື້ນີ້</a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-title">
+                    <h2>ບໍລິການດ້ານກົດໝາຍຂອງພວກເຮົາ</h2>
+                    <p>ພວກເຮົາໃຫ້ບໍລິການກົດໝາຍຄົບວົງຈອນດ້ວຍທີມຜູ່ຊ່ຽວຊານ</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>ກົດໝາຍອານາຈັກ</h3>
+                            <p>ໃຫ້ຄໍາປຶກສາ ແລະ ວາການຄຸ້ມຄອງຄະດີອານາຈັກທຸກປະເພດ ລວມທັງຄະດີກ່ຽວກັບທຸລະກຳ ແລະທຣັບສິນ</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>ກົດໝາຍແຜ່ງ ແລະ ຄອບຄົວ</h3>
+                            <p>ຮັບດໍາເນີນຄະດີມຣະດົກ ການຢືນຢັນການຢ່າ, ການແບ່ງທຣັບສິນ ແລະ ຄ່າອຸ່ນໃຈ</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>ກົດໝາຍທຸລະກິດ ແລະ ບໍລິສັດ</h3>
+                            <p>ໃຫ້ຄໍາປຶກສາທາງທຸລະກິດ, ການຈັດຕັ້ງບໍລິສັດ, ສັນຍາ ແລະ ການແກ້ໄຂຂໍ້ຂ້າມແຍ່ງ</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="team" id="team">
+            <div class="container">
+                <div class="section-title">
+                    <h2>ທີມທະນາຍຄວາມຂອງພວກເຮົາ</h2>
+                    <p>ທີມທະນາຍຄວາມຜູ່ຊ່ຽວຊານ ພ້ອມສະໜອງການບໍລິການ</p>
+                </div>
+                
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?..." alt="ทนายความสมชาย">
+                        <h4>ທະນາຍຄວາມ ສົມຊາຍ ໃຈດີ</h4>
+                        <p>ຜູ້ຊ່ຽວຊານດ້ານກົດໝາຍອານາຈັກ</p>
+                        <p>ປະສົບການ 15 ປີ</p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?..." alt="ทนายความสุมิตรา">
+                        <h4>ທະນາຍຄວາມ ສຸມິດທຣາ ສະຫວັງ</h4>
+                        <p>ຜູ້ຊ່ຽວຊານດ້ານກົດໝາຍຄອບຄົວ</p>
+                        <p>ປະສົບການ 12 ປີ</p>
+                    </div>
+                    
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1562788869-4ed32648eb72?..." alt="ทนายความธนา">
+                        <h4>ທະນາຍຄວາມ ທະນາ ກິດຕິປຣເສີດ</h4>
+                        <p>ຜູ້ຊ່ຽວຊານດ້ານກົດໝາຍທຸລະກິດ</p>
+                        <p>ປະສົບການ 20 ປີ</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2>ຕິດຕໍ່ພວກເຮົາ</h2>
+                    <p>ພວກເຮົາພ້ອມໃຫ້ຄໍາປຶກສາ ກະລຸນາຕິດຕໍ່ເພື່ອນັດຫມາຍ</p>
+                </div>
+                
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>ຂໍ້ມູນຕິດຕໍ່</h3>
+                         <div class="contact-detail">
+                             <i class="fas fa-map-marker-alt"></i>
+                             <div>
+                                <h4>ທີ່ຢູ່</h4>
+                                <p>123 ອາຄານສູນກົດໝາຍ ຖະໜົນຣາຊະດຳຣິ ບ່ອນລຸມພິນີ ແຂວງປະທຸມວັນ ກຸກກະທອງ 10330</p>
+                             </div>
+                         </div>
+                         
+                         <div class="contact-detail">
+                             <i class="fas fa-phone"></i>
+                             <div>
+                                <h4>ໂທລະສັບ</h4>
+                                <p>02-123-4567</p>
+                             </div>
+                         </div>
+                         
+                         <div class="contact-detail">
+                             <i class="fas fa-envelope"></i>
+                             <div>
+                                <h4>ອີເມວ</h4>
+                                <p>contact@thanakitlaw.com</p>
+                             </div>
+                         </div>
+                         
+                         <div class="contact-detail">
+                             <i class="fas fa-clock"></i>
+                             <div>
+                                <h4>ເວລາເຮັດວຽກ</h4>
+                                <p>ຈັນ - ສຸກ: 8:30 - 17:30<br>ເສົາ: 9:00 - 12:00</p>
+                             </div>
+                         </div>
+                     </div>
+                     
+                     <div class="contact-form">
+                         <h3>ສົ່ງຂໍໍາຮ້ອງຂໍປຶກສາຟຣີ</h3>
+                         <form id="appointmentForm">
+                            <input type="text" placeholder="ຊື່-ນາມສະກຸນ" required>
+                            <input type="email" placeholder="ອີເມວ" required>
+                            <input type="tel" placeholder="ໂທລະສັບ" required>
+                            <select style="width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 4px;">
+                                <option value="">ເລືອກປະເພດການປຶກສາ</option>
+                                <option value="criminal">ກົດໝາຍອານາຈັກ</option>
+                                <option value="family">ກົດໝາຍຄອບຄົວ</option>
+                                <option value="business">ກົດໝາຍທຸລະກິດ</option>
+                                <option value="other">ອື່ນໆ</option>
+                            </select>
+                            <textarea rows="5" placeholder="ລາຍລະອຽດບັນຫາຫຼືຄໍາຖາມ" required></textarea>
+                            <button type="submit">ສົ່ງຄໍາຮ້ອງຂໍປຶກສາຟຣີ</button>
+                         </form>
+                     </div>
+                 </div>
+             </div>
+         </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h4>ບໍລິສັດທະນາຍຄວາມ ທະນາກິດ ແລະພ່ອມ partners</h4>
+                        <p>ໃຫ້ບໍລິການກົດໝາຍຄົບວົງຈອນ ດ້ວຍມາດຕະຖານສາກົນ ເພື່ອປົກປ້ອງຜົນປະໂຫຍດລຸ່ມສຸດຂອງລູກຄ່າ</p>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>ລິ້ງດ່ວນ</h4>
+                        <ul>
+                            <li><a href="#home">ໜ້າຫຼັກ</a></li>
+                            <li><a href="#about">ເກີວກັບພວກເຮົາ</a></li>
+                            <li><a href="#services">ບໍລິການ</a></li>
+                            <li><a href="#team">ທີມ</a></li>
+                            <li><a href="#contact">ຕິດຕໍ່</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>ບໍລິການຂອງພວກເຮົາ</h4>
+                        <ul>
+                            <li><a href="#services">ກົດໝາຍອານາຈັກ</a></li>
+                            <li><a href="#services">ກົດໝາຍແຜ່ງ ແລະ ຄອບຄົວ</a></li>
+                            <li><a href="#services">ກົດໝາຍທຸລະກິດ</a></li>
+                            <li><a href="#services">ກົດໝາຍກ່ຽວກັບພາສີ</a></li>
+                            <li><a href="#services">ກົດໝາຍແຮງງານ</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>ຕິດຕາມພວກເຮົາ</h4>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-line"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="copyright">
+                    <p>&copy; 2023 ບໍລິສັດທະນາຍຄວາມ ທະນາກິດ ແລະພ່ອມ partners. ສິດຂອງຜູ້ສ້າງ.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- English content -->
+    <main id="content-en" class="lang" data-lang="en">
+        <section class="hero" id="home-en">
+            <div class="container">
+                <h2>Professional Lawyers — Full Legal Consultation</h2>
+                <p>We have over 20 years of experience providing comprehensive legal services with a team of specialist lawyers to support your legal needs.</p>
+                <a href="#contact-en" class="cta-button">Get a Free Consultation</a>
+                <a href="appointment.html" class="cta-button">Book a Free Appointment Today</a>
+            </div>
+        </section>
+
+        <section class="services" id="services-en">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Legal Services</h2>
+                    <p>We provide end-to-end legal advice and representation by specialist lawyers.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-balance-scale"></i></div>
+                        <div class="service-content">
+                            <h3>Criminal Law</h3>
+                            <p>Advice and defense for all types of criminal cases including fraud and property crimes.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-home"></i></div>
+                        <div class="service-content">
+                            <h3>Civil & Family Law</h3>
+                            <p>Inheritance, divorce, asset division, child support and other civil matters.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon"><i class="fas fa-briefcase"></i></div>
+                        <div class="service-content">
+                            <h3>Business & Corporate Law</h3>
+                            <p>Business advice, company formation, contracts, dispute resolution and commercial law.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team" id="team-en">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Legal Team</h2>
+                    <p>Experienced specialist lawyers ready to serve you.</p>
+                </div>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?..." alt="Lawyer Somchai">
+                        <h4>Somchai Jaidee</h4>
+                        <p>Criminal law specialist</p>
+                        <p>15 years experience</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?..." alt="Lawyer Sumitra">
+                        <h4>Sumitra Srisawang</h4>
+                        <p>Family law specialist</p>
+                        <p>12 years experience</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1562788869-4ed32648eb72?..." alt="Lawyer Thana">
+                        <h4>Thana Kittiprasert</h4>
+                        <p>Business law specialist</p>
+                        <p>20 years experience</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact-en">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Contact Us</h2>
+                    <p>We are ready to advise on any legal issue. Please contact us to schedule a consultation.</p>
+                </div>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <div class="contact-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Address</h4>
+                                <p>123 Legal Center Building, Ratchadamri Rd., Lumpini, Pathumwan, Bangkok 10330</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>02-123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>contact@thanakitlaw.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Business Hours</h4>
+                                <p>Mon - Fri: 8:30 - 17:30<br>Sat: 9:00 - 12:00</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <h3>Send Us a Message</h3>
+                        <form class="appointmentForm">
+                            <input type="text" placeholder="Full name" required>
+                            <input type="email" placeholder="Email" required>
+                            <input type="tel" placeholder="Phone" required>
+                            <select style="width:100%; padding:15px; margin-bottom:20px; border:1px solid #ddd; border-radius:4px;">
+                                <option value="">Select consultation type</option>
+                                <option value="criminal">Criminal Law</option>
+                                <option value="family">Family Law</option>
+                                <option value="business">Business Law</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <textarea rows="5" placeholder="Details or questions" required></textarea>
+                            <button type="submit">Send Free Consultation Request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h4>Consultancy law Co.,Ltd</h4>
+                        <p>Comprehensive legal services with international standards, committed to justice and client interests.</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home-en">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#services-en">Services</a></li>
+                            <li><a href="#team-en">Team</a></li>
+                            <li><a href="#contact-en">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Our Services</h4>
+                        <ul>
+                            <li><a href="#services-en">Criminal Law</a></li>
+                            <li><a href="#services-en">Civil & Family Law</a></li>
+                            <li><a href="#services-en">Business & Corporate Law</a></li>
+                            <li><a href="#services-en">Tax Law</a></li>
+                            <li><a href="#services-en">Labor Law</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-line"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2023 Consultancy law Co.,Ltd. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // filepath: d:\inthanin_school\websites\Law01\index.html
+        (function(){
+            const translations = {
+                lo: { title: 'ບໍລິສັດທະນາຍຄວາມ ທະນາກິດ ແລະພ່ອມ partners | ໃຫ້ຄໍາປຶກສາດ້ານກົດໝາຍຄົບວົງຈອນ', alert: 'ຂອບໃຈສໍາລັບການນັດຫມາຍ! ພວກເຮົາຈະຕິດຕໍ່ກັບທ່ານໃນພາຍໃນ 24 ຊົ່ວໂມງ' },
+                en: { title: 'Consultancy law Co.,Ltd | Full legal services', alert: 'Thank you for your appointment request! We will contact you within 24 hours.' }
+            };
+
+            const btnLo = document.getElementById('btn-lo');
+            const btnEn = document.getElementById('btn-en');
+            const contentLo = document.getElementById('content-lo');
+            const contentEn = document.getElementById('content-en');
+
+            function setLang(lang){
+                if(lang === 'en'){
+                    document.documentElement.lang = 'en';
+                    document.title = translations.en.title;
+                    contentLo.classList.remove('show');
+                    contentEn.classList.add('show');
+                    btnEn.classList.add('active'); btnLo.classList.remove('active');
+                } else {
+                    document.documentElement.lang = 'lo';
+                    document.title = translations.lo.title;
+                    contentEn.classList.remove('show');
+                    contentLo.classList.add('show');
+                    btnLo.classList.add('active'); btnEn.classList.remove('active');
+                }
+                document.querySelectorAll('.nav-lo').forEach(el=> el.style.display = (lang==='lo') ? 'inline' : 'none');
+                document.querySelectorAll('.nav-th').forEach(el=> el.style.display = (lang==='en') ? 'inline' : 'none');
+                try { localStorage.setItem('site-lang',''+lang); } catch(e){}
+            }
+
+            btnLo.addEventListener('click', ()=> setLang('lo'));
+            btnEn.addEventListener('click', ()=> setLang('en'));
+
+            const saved = (function(){ try { return localStorage.getItem('site-lang'); } catch(e){return null;} })() || 'lo';
+            setLang(saved);
+
+            // Mobile menu toggle
+            document.querySelector('.mobile-menu').addEventListener('click', function() {
+                const navUl = document.querySelector('nav ul');
+                navUl.style.display = navUl.style.display === 'flex' ? 'none' : 'flex';
+            });
+
+            // Form submission: handle both Lao (#appointmentForm) and English (.appointmentForm)
+            document.querySelectorAll('#appointmentForm, .appointmentForm').forEach(form=>{
+                form.addEventListener('submit', function(e){
+                    e.preventDefault();
+                    const lang = document.documentElement.lang === 'en' ? 'en' : 'lo';
+                    alert(translations[lang].alert);
+                    this.reset();
+                });
+            });
+
+            // Smooth scrolling
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({ top: targetElement.offsetTop - 80, behavior: 'smooth' });
+                        const navUl = document.querySelector('nav ul');
+                        if(window.getComputedStyle(navUl).display === 'flex') navUl.style.display = 'none';
+                    }
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
