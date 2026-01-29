@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="lo">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ນັດຫມົດປຶກສາກັບທະນາຍຄວາມຟຣີ | ທະນາກິດ ແລະ ພາກສ່ວນ</title>
+    <title>นัดหมายปรึกษากับทนายความฟรี | ธนากิตติ์ และสห partners</title>
     <style>
         * {
             margin: 0;
@@ -452,10 +452,10 @@
         <div class="header-container">
             <a href="index.html" class="logo">
                 <div class="scale">⚖️</div>
-                <h1>ທະນາກິດ ແລະ ພາກສ່ວນ</h1>
+                <h1>ธนากิตติ์ และสห partners</h1>
             </a>
             <a href="index.html" class="back-button">
-                <i class="fas fa-arrow-left"></i> ກັບໄປໜ້າຫຼັກ
+                <i class="fas fa-arrow-left"></i> กลับสู่หน้าหลัก
             </a>
         </div>
     </header>
@@ -463,8 +463,8 @@
     <!-- Hero Section -->
     <section class="appointment-hero">
         <div class="container">
-            <h2>ນັດໝາຍປຶກສາກັບທະນາຍຄວາມຟຣີ</h2>
-            <p>ຮັບຄໍາປຶກສາກົດໝາຍເບື້ອງຕົ້ນ ບໍ່ມີຄ່າໃຊ້ຈ່າຍ ຈາກທີມທະນາຍຄວາມຜູ້ຊ່ວຍເຫຼືອ</p>
+            <h2>นัดหมายปรึกษากับทนายความฟรี</h2>
+            <p>รับคำปรึกษากฎหมายเบื้องต้นโดยไม่มีค่าใช้จ่าย จากทีมทนายความผู้เชี่ยวชาญเฉพาะด้าน</p>
         </div>
     </section>
 
@@ -473,157 +473,172 @@
         <div class="appointment-container">
             <!-- Form Section -->
             <div class="appointment-form">
-                <h2 class="form-title">ກອກຂໍ້ມູນການນັດຫມົດ</h2>
+                <h2 class="form-title">กรอกข้อมูลนัดหมาย</h2>
                 
                 <form id="appointmentForm">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="firstName" class="form-label required">ຊື່</label>
-                            <input type="text" id="firstName" class="form-control" placeholder="ສົມໃຈ">
-                            <div class="error-message" id="firstNameError">ກະລຸນາປ້ອນຊື່</div>
+                            <label for="firstName" class="form-label required">ชื่อ</label>
+                            <input type="text" id="firstName" class="form-control" placeholder="สมชาย">
+                            <div class="error-message" id="firstNameError">กรุณากรอกชื่อ</div>
                         </div>
                         
                         <div class="form-group">
-                            <label for="lastName" class="form-label required">ນາມສະກຸນ</label>
-                            <input type="text" id="lastName" class="form-control" placeholder="ໃຈດີ">
-                            <div class="error-message" id="lastNameError">ກະລຸນາປ້ອນນາມສະກຸນ</div>
+                            <label for="lastName" class="form-label required">นามสกุล</label>
+                            <input type="text" id="lastName" class="form-control" placeholder="ใจดี">
+                            <div class="error-message" id="lastNameError">กรุณากรอกนามสกุล</div>
                         </div>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="phone" class="form-label required">ໂທລະສັບ</label>
+                            <label for="phone" class="form-label required">โทรศัพท์</label>
                             <input type="tel" id="phone" class="form-control" placeholder="081-234-5678">
-                            <div class="error-message" id="phoneError">ກະລຸນາປ້ອນໝາຍເບີໂທທີ່ຖືກຕ້ອງ</div>
+                            <div class="error-message" id="phoneError">กรุณากรอกเบอร์โทรศัพท์ที่ถูกต้อง</div>
                         </div>
                         
                         <div class="form-group">
-                            <label for="email" class="form-label required">ອີເມວ</label>
+                            <label for="email" class="form-label required">อีเมล</label>
                             <input type="email" id="email" class="form-control" placeholder="name@example.com">
-                            <div class="error-message" id="emailError">ກະລຸນາປ້ອນອີເມວທີ່ຖືກຕ້ອງ</div>
+                            <div class="error-message" id="emailError">กรุณากรอกอีเมลที่ถูกต้อง</div>
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="caseType" class="form-label required">ປະເພດຄະດີທີ່ຕ້ອງການປຶກສາ</label>
+                        <label for="caseType" class="form-label required">ประเภทคดีที่ต้องการปรึกษา</label>
                         <select id="caseType" class="form-control">
-                            <option value="">-- ເລືອກປະເພດຄະດີ --</option>
-                            <option value="criminal">ກົດໝາຍອານາຄ</option>
-                            <option value="family">ກົດໝາຍຄອບຄົວແລະມຣະດກ</option>
-                            <option value="business">ກົດໝາຍທຸລະກິດແລະສັນຍາ</option>
-                            <option value="labor">ກົດໝາຍແຮງງານ</option>
-                            <option value="property">ກົດໝາຍສິດທິຊັບພັນແລະດິນ</option>
-                            <option value="other">ອື່ນໆ</option>
+                            <option value="">-- เลือกประเภทคดี --</option>
+                            <option value="criminal">กฎหมายอาญา</option>
+                            <option value="family">กฎหมายครอบครัวและมรดก</option>
+                            <option value="business">กฎหมายธุรกิจและสัญญา</option>
+                            <option value="labor">กฎหมายแรงงาน</option>
+                            <option value="property">กฎหมายทรัพย์สินและที่ดิน</option>
+                            <option value="other">อื่น ๆ</option>
                         </select>
-                        <div class="error-message" id="caseTypeError">ກະລຸນາເລືອກປະເພດຄະດີ</div>
+                        <div class="error-message" id="caseTypeError">กรุณาเลือกประเภทคดี</div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="preferredLawyer" class="form-label">ຕ້ອງການປຶກສາກັບທະນາຍຄວາມ (ຖ້າມີ)</label>
+                        <label for="preferredLawyer" class="form-label">ต้องการปรึกษากับทนายความท่านใด (ถ้ามี)</label>
                         <select id="preferredLawyer" class="form-control">
-                            <option value="">-- ເລືອກທະນາຍຄວາມ --</option>
-                            <option value="somchai">ທະນາຍຄວາມສົມໃຈ (ກົດໝາຍອານາຄ)</option>
-                            <option value="sumitra">ທະນາຍຄວາມສຸມິດຕຣາ (ກົດໝາຍຄອບຄົວ)</option>
-                            <option value="thana">ທະນາຍຄວາມທະນາ (ກົດໝາຍທຸລະກິດ)</option>
-                            <option value="any">ທະນາຍຄວາມໃດໜຶ່ງ</option>
+                            <option value="">-- เลือกทนายความ --</option>
+                            <option value="somchai">ทนายความสมชาย ใจดี (กฎหมายอาญา)</option>
+                            <option value="sumitra">ทนายความสุมิตรา ศรีสว่าง (กฎหมายครอบครัว)</option>
+                            <option value="thana">ทนายความธนา กิตติ์ประเสริฐ (กฎหมายธุรกิจ)</option>
+                            <option value="any">ทนายความท่านใดก็ได้</option>
                         </select>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="preferredDate" class="form-label required">ວັນທີ່ຕ້ອງການນັດ</label>
+                            <label for="preferredDate" class="form-label required">วันที่ต้องการนัดหมาย</label>
                             <input type="date" id="preferredDate" class="form-control" min="">
-                            <div class="error-message" id="dateError">ກະລຸນາເລືອກວັນທີ</div>
+                            <div class="error-message" id="dateError">กรุณาเลือกวันที่นัดหมาย</div>
                         </div>
                         
                         <div class="form-group">
-                            <label for="preferredTime" class="form-label required">ເວລາທີ່ຕ້ອງການນັດ</label>
+                            <label for="preferredTime" class="form-label required">เวลาที่ต้องการนัดหมาย</label>
                             <select id="preferredTime" class="form-control">
-                                <option value="">-- ເລືອກເວລາ --</option>
-                                <option value="09:00">09:00 - 10:00</option>
-                                <option value="10:00">10:00 - 11:00</option>
-                                <option value="11:00">11:00 - 12:00</option>
-                                <option value="13:00">13:00 - 14:00</option>
-                                <option value="14:00">14:00 - 15:00</option>
-                                <option value="15:00">15:00 - 16:00</option>
-                                <option value="16:00">16:00 - 17:00</option>
+                                <option value="">-- เลือกเวลา --</option>
+                                <option value="09:00">09:00 - 10:00 น.</option>
+                                <option value="10:00">10:00 - 11:00 น.</option>
+                                <option value="11:00">11:00 - 12:00 น.</option>
+                                <option value="13:00">13:00 - 14:00 น.</option>
+                                <option value="14:00">14:00 - 15:00 น.</option>
+                                <option value="15:00">15:00 - 16:00 น.</option>
+                                <option value="16:00">16:00 - 17:00 น.</option>
                             </select>
-                            <div class="error-message" id="timeError">ກະລຸນາເລືອກເວລາ</div>
+                            <div class="error-message" id="timeError">กรุณาเลือกเวลานัดหมาย</div>
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="consultationMethod" class="form-label required">ວິທີຮັບຄໍາປຶກສາ</label>
+                        <label for="consultationMethod" class="form-label required">วิธีรับคำปรึกษา</label>
                         <select id="consultationMethod" class="form-control">
-                            <option value="">-- ເລືອກວິທີປຶກສາ --</option>
-                            <option value="office">ພົບປະທີ່ສຳນັກງານ</option>
-                            <option value="online">ປຶກສາອອນລາຍ (Zoom/Skype)</option>
-                            <option value="phone">ປຶກສາທາງໂທລະສັບ</option>
+                            <option value="">-- เลือกวิธีรับคำปรึกษา --</option>
+                            <option value="office">พบปะที่สำนักงาน</option>
+                            <option value="online">ปรึกษาออนไลน์ (Zoom/Skype)</option>
+                            <option value="phone">ปรึกษาทางโทรศัพท์</option>
                         </select>
-                        <div class="error-message" id="methodError">ກະລຸນາເລືອກວິທີປຶກສາ</div>
+                        <div class="error-message" id="methodError">กรุณาเลือกวิธีรับคำปรึกษา</div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="caseDetails" class="form-label required">ລາຍລະອຽດຂອງບັນຫາ ຫຼື ຄໍາຖາມ</label>
-                        <textarea id="caseDetails" class="form-control" placeholder="ກະລຸນາອະທິບາຍບັນຫາຫຼືຄໍາຖາມສັ້ນ"></textarea>
-                        <div class="error-message" id="detailsError">ກະລຸນາປ້ອນລາຍລະອຽດ</div>
+                        <label for="caseDetails" class="form-label required">รายละเอียดปัญหาหรือคำถาม</label>
+                        <textarea id="caseDetails" class="form-control" placeholder="โปรดอธิบายปัญหาหรือคำถามทางกฎหมายโดยย่อ"></textarea>
+                        <div class="error-message" id="detailsError">กรุณากรอกรายละเอียดปัญหาหรือคำถาม</div>
                     </div>
                     
-                        <div class="loading" id="formLoading">
+                    <div class="loading" id="formLoading">
                         <div class="spinner"></div>
-                        <p>ກຳລັງສົ່ງຂໍ້ມູນ...</p>
+                        <p>กำลังส่งข้อมูล...</p>
                     </div>
                     
                     <button type="submit" class="submit-btn" id="submitBtn">
-                        <i class="fas fa-calendar-check"></i> ສົ່ງຄໍາຮ້ອງນັດ
+                        <i class="fas fa-calendar-check"></i> ส่งคำขอนัดหมาย
                     </button>
                 </form>
             </div>
             
             <!-- Information Section -->
             <div class="appointment-info">
-                <h2 class="info-title">ຂໍ້ມູນການນັດຫມົດ</h2>
+                <h2 class="info-title">ข้อมูลการนัดหมาย</h2>
                 
                 <ul class="info-list">
                     <li>
                         <i class="fas fa-clock"></i>
                         <div>
-                            <strong>ເວລາທຳງານສໍາລັບການນັດ</strong>
-                            <p>ຈັນ - ສຸກ: 9:00 - 17:00<br>ເສົາ: 9:00 - 12:00<br>ປິດວັນອາທິດແລະວັນພັກຊາດ</p>
+                            <strong>เวลาทำการนัดหมาย</strong>
+                            <p>จันทร์ - ศุกร์: 9:00 - 17:00 น.<br>เสาร์: 9:00 - 12:00 น.<br>ปิดวันอาทิตย์และวันหยุดนักขัตฤกษ์</p>
                         </div>
                     </li>
                     <li>
                         <i class="fas fa-comments"></i>
                         <div>
-                            <strong>ການປຶກສາຟຣີຄອບຄຸ່ມ</strong>
-                            <p>ວິເຄາະເບື້ອງຕົ້ນ ແນະນຳແນວທາງແກ້ໄຂ ແລະ ລາຍລະອຽດເອກະສານທີ່ຈໍາເປັນ</p>
+                            <strong>การปรึกษาฟรีครอบคลุม</strong>
+                            <p>วิเคราะห์เบื้องต้นเกี่ยวกับคดี รับคำแนะนำแนวทางแก้ไขปัญหา ข้อควรปฏิบัติ และคำแนะนำเกี่ยวกับเอกสารที่จำเป็น</p>
                         </div>
                     </li>
                     <li>
                         <i class="fas fa-user-tie"></i>
                         <div>
-                            <strong>ຫຼັງການນັດ</strong>
-                            <p>ພວກເຮົາຈະຕິດຕໍ່ກັບທ່ານພາຍໃນ 24 ຊົ່ວໂມງເພື່ອຢືນຢັນການນັດ ແລະແຈ້ງຊື່ທະນາຍຄວາມທີ່ເໝາະສົມ</p>
+                            <strong>หลังการนัดหมาย</strong>
+                            <p>เราจะติดต่อกลับภายใน 24 ชั่วโมงเพื่อยืนยันการนัดหมาย และแจ้งรายชื่อทนายความที่เหมาะสมกับกรณีของคุณ</p>
                         </div>
                     </li>
                     <li>
                         <i class="fas fa-file-contract"></i>
                         <div>
-                            <strong>ການຕຽມຕົວ</strong>
-                            <p>ກະລຸນານຳເອກະສານທີ່ກ່ຽວຂ້ອງ (ຖ້າມີ) ມາໃນວັນນັດເພື່ອໃຫ້ທະນາຍຄວາມສາມາດປຶກສາໄດ້ຢ່າງມີປະສິດທິພາບ</p>
+                            <strong>การเตรียมตัว</strong>
+                            <p>กรุณานำเอกสารที่เกี่ยวข้อง (ถ้ามี) มาในวันนัดหมาย เพื่อให้ทนายความให้คำปรึกษาได้อย่างมีประสิทธิภาพสูงสุด</p>
                         </div>
                     </li>
                 </ul>
                 
                 <div class="contact-methods">
-                    <h4>ຊ່ອງທາງຕິດຕໍ່ອື່ນໆ</h4>
-                    <p><i class="fas fa-phone"></i> ໂທລະສັບ: 02-123-4567 (ຈັນ-ສຸກ 8:30-17:30)</p>
-                    <p><i class="fas fa-envelope"></i> ອີເມວ: appointment@thanakitlaw.com</p>
+                    <h4>ช่องทางติดต่ออื่น ๆ</h4>
+                    <p><i class="fas fa-phone"></i> โทรศัพท์: 02-123-4567 (จันทร์-ศุกร์ 8:30-17:30 น.)</p>
+                    <p><i class="fas fa-envelope"></i> อีเมล: appointment@thanakitlaw.com</p>
                     <p><i class="fab fa-line"></i> Line ID: @thanakitlaw</p>
-                    <p><i class="fas fa-map-marker-alt"></i> ທີ່ຢູ່: 123 ອາຄານສູນກົດໝາຍ ຖະນົມຣາດຳຣິ, ບ້ານລຸມພິນີ, ເມືອງປົທຸມວັນ, 10330</p>
+                    <p><i class="fas fa-map-marker-alt"></i> ที่อยู่: 123 อาคารศูนย์กฎหมาย ถนนราชดำริ แขวงลุมพินี เขตปทุมวัน กรุงเทพฯ 10330</p>
                 </div>
                 
-           
+                <h3 style="margin-top: 40px; color: var(--primary-color);">ทนายความผู้เชี่ยวชาญของเรา</h3>
+                <div class="lawyers-grid">
+                    <div class="lawyer-card">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="ทนายความสมชาย">
+                        <h4>ทนายความสมชาย ใจดี</h4>
+                        <p>ประสบการณ์ 15 ปี</p>
+                        <div class="specialty">กฎหมายอาญา</div>
+                    </div>
+                    
+                    <div class="lawyer-card">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=688&q=80" alt="ทนายความสุมิตรา">
+                        <h4>ทนายความสุมิตรา ศรีสว่าง</h4>
+                        <p>ประสบการณ์ 12 ปี</p>
+                        <div class="specialty">กฎหมายครอบครัว</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -634,10 +649,10 @@
             <div class="modal-icon">
                 <i class="fas fa-check-circle"></i>
             </div>
-            <h3>ສົ່ງຄໍາຮ້ອງນັດສໍາເລັດ!</h3>
-            <p>ພວກເຮົາຈະຕິດຕໍ່ກັບທ່ານພາຍໃນ 24 ຊົ່ວໂມງເພື່ອຢືນຢັນການນັດແລະລາຍລະອຽດເພີ່ມເຕີມ</p>
+            <h3>ส่งคำขอนัดหมายสำเร็จ!</h3>
+            <p>เราจะติดต่อกลับไปยังคุณภายใน 24 ชั่วโมงเพื่อยืนยันการนัดหมายและรายละเอียดเพิ่มเติม</p>
             <p id="appointmentDetails" style="text-align: left; background-color: #f8f9fa; padding: 15px; border-radius: 6px; margin: 20px 0;"></p>
-            <button id="closeModal">ປິດ</button>
+            <button id="closeModal">ปิด</button>
         </div>
     </div>
 
@@ -645,13 +660,13 @@
     <footer>
         <div class="footer-content">
             <div class="footer-links">
-                <a href="index.html">ໜ້າຫຼັກ</a>
-                <a href="about.html">ກ່ຽວກັບເຮົາ</a>
-                <a href="services.html">ບໍລິການຂອງເຮົາ</a>
-                <a href="team.html">ທີມທະນາຍຄວາມ</a>
-                <a href="contact.html">ຕິດຕໍ່ເຮົາ</a>
+                <a href="index.html">หน้าหลัก</a>
+                <a href="about.html">เกี่ยวกับเรา</a>
+                <a href="services.html">บริการของเรา</a>
+                <a href="team.html">ทีมทนายความ</a>
+                <a href="contact.html">ติดต่อเรา</a>
             </div>
-            <p class="copyright">© 2023 ບໍລິສັດທະນາຍຄວາມ ທະນາກິດ ແລະ ພາກສ່ວນ. ສິດທິທັງໝົດ.</p>
+            <p class="copyright">© 2023 บริษัททนายความ ธนากิตติ์ และสห partners. สงวนลิขสิทธิ์.</p>
         </div>
     </footer>
 
@@ -684,15 +699,15 @@
             
             // ตรวจสอบฟิลด์ required
             const requiredFields = [
-                {id: 'firstName', errorId: 'firstNameError', message: 'ກະລຸນາປ້ອນຊື່'},
-                {id: 'lastName', errorId: 'lastNameError', message: 'ກະລຸນາປ້ອນນາມສະກຸນ'},
-                {id: 'phone', errorId: 'phoneError', message: 'ກະລຸນາປ້ອນໝາຍເບີໂທ'},
-                {id: 'email', errorId: 'emailError', message: 'ກະລຸນາປ້ອນອີເມວທີ່ຖືກຕ້ອງ'},
-                {id: 'caseType', errorId: 'caseTypeError', message: 'ກະລຸນາເລືອກປະເພດຄະດີ'},
-                {id: 'preferredDate', errorId: 'dateError', message: 'ກະລຸນາເລືອກວັນທີ'},
-                {id: 'preferredTime', errorId: 'timeError', message: 'ກະລຸນາເລືອກເວລາ'},
-                {id: 'consultationMethod', errorId: 'methodError', message: 'ກະລຸນາເລືອກວິທີປຶກສາ'},
-                {id: 'caseDetails', errorId: 'detailsError', message: 'ກະລຸນາປ້ອນລາຍລະອຽດ'}
+                {id: 'firstName', errorId: 'firstNameError', message: 'กรุณากรอกชื่อ'},
+                {id: 'lastName', errorId: 'lastNameError', message: 'กรุณากรอกนามสกุล'},
+                {id: 'phone', errorId: 'phoneError', message: 'กรุณากรอกเบอร์โทรศัพท์'},
+                {id: 'email', errorId: 'emailError', message: 'กรุณากรอกอีเมลที่ถูกต้อง'},
+                {id: 'caseType', errorId: 'caseTypeError', message: 'กรุณาเลือกประเภทคดี'},
+                {id: 'preferredDate', errorId: 'dateError', message: 'กรุณาเลือกวันที่นัดหมาย'},
+                {id: 'preferredTime', errorId: 'timeError', message: 'กรุณาเลือกเวลานัดหมาย'},
+                {id: 'consultationMethod', errorId: 'methodError', message: 'กรุณาเลือกวิธีรับคำปรึกษา'},
+                {id: 'caseDetails', errorId: 'detailsError', message: 'กรุณากรอกรายละเอียดปัญหาหรือคำถาม'}
             ];
             
             requiredFields.forEach(field => {
@@ -712,7 +727,7 @@
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (email && !emailRegex.test(email)) {
                 document.getElementById('email').classList.add('error');
-                document.getElementById('emailError').textContent = 'ກະລຸນາປ້ອນອີເມວທີ່ຖືກຕ້ອງ';
+                document.getElementById('emailError').textContent = 'กรุณากรอกอีเมลที่ถูกต้อง';
                 document.getElementById('emailError').style.display = 'block';
                 isValid = false;
             }
@@ -722,7 +737,7 @@
             const phoneRegex = /^[0-9\-+]{9,15}$/;
             if (phone && !phoneRegex.test(phone.replace(/\s/g, ''))) {
                 document.getElementById('phone').classList.add('error');
-                document.getElementById('phoneError').textContent = 'ກະລຸນາປ້ອນໝາຍເບີໂທທີ່ຖືກຕ້ອງ';
+                document.getElementById('phoneError').textContent = 'กรุณากรอกเบอร์โทรศัพท์ที่ถูกต้อง';
                 document.getElementById('phoneError').style.display = 'block';
                 isValid = false;
             }
@@ -764,26 +779,26 @@
                 
                 // สร้างข้อความสรุปการนัดหมาย
                 const caseTypeText = {
-                    'criminal': 'ກົດໝາຍອານາຄ',
-                    'family': 'ກົດໝາຍຄອບຄົວແລະມຣະດກ',
-                    'business': 'ກົດໝາຍທຸລະກິດແລະສັນຍາ',
-                    'labor': 'ກົດໝາຍແຮງງານ',
-                    'property': 'ກົດໝາຍສິດທິຊັບພັນແລະດິນ',
-                    'other': 'ອື່ນໆ'
+                    'criminal': 'กฎหมายอาญา',
+                    'family': 'กฎหมายครอบครัวและมรดก',
+                    'business': 'กฎหมายธุรกิจและสัญญา',
+                    'labor': 'กฎหมายแรงงาน',
+                    'property': 'กฎหมายทรัพย์สินและที่ดิน',
+                    'other': 'อื่น ๆ'
                 }[formData.caseType] || formData.caseType;
                 
                 const lawyerText = {
-                    'somchai': 'ທະນາຍຄວາມສົມໃຈ',
-                    'sumitra': 'ທະນາຍຄວາມສຸມິດຕຣາ',
-                    'thana': 'ທະນາຍຄວາມທະນາ',
-                    'any': 'ທະນາຍຄວາມໃດໜຶ່ງ',
-                    '': 'ບໍ່ລະບຸ'
+                    'somchai': 'ทนายความสมชาย ใจดี',
+                    'sumitra': 'ทนายความสุมิตรา ศรีสว่าง',
+                    'thana': 'ทนายความธนา กิตติ์ประเสริฐ',
+                    'any': 'ทนายความท่านใดก็ได้',
+                    '': 'ไม่ระบุ'
                 }[formData.preferredLawyer] || formData.preferredLawyer;
                 
                 const methodText = {
-                    'office': 'ພົບປະທີ່ສຳນັກງານ',
-                    'online': 'ປຶກສາອອນລາຍ',
-                    'phone': 'ປຶກສາທາງໂທລະສັບ'
+                    'office': 'พบปะที่สำนักงาน',
+                    'online': 'ปรึกษาออนไลน์',
+                    'phone': 'ปรึกษาทางโทรศัพท์'
                 }[formData.consultationMethod] || formData.consultationMethod;
                 
                 // แปลงวันที่เป็นรูปแบบไทย
@@ -796,14 +811,14 @@
                 
                 // แสดงข้อมูลใน modal
                 const detailsHtml = `
-                    <strong>ຊື່-ນາມສະກຸນ:</strong> ${formData.firstName} ${formData.lastName}<br>
-                    <strong>ໂທລະສັບ:</strong> ${formData.phone}<br>
-                    <strong>ອີເມວ:</strong> ${formData.email}<br>
-                    <strong>ປະເພດຄະດີ:</strong> ${caseTypeText}<br>
-                    <strong>ທະນາຍຄວາມທີ່ຕ້ອງການ:</strong> ${lawyerText}<br>
-                    <strong>ວັນທີ່ນັດ:</strong> ${thaiDate}<br>
-                    <strong>ເວລານັດ:</strong> ${formData.preferredTime}<br>
-                    <strong>ວິທີປຶກສາ:</strong> ${methodText}
+                    <strong>ชื่อ-นามสกุล:</strong> ${formData.firstName} ${formData.lastName}<br>
+                    <strong>โทรศัพท์:</strong> ${formData.phone}<br>
+                    <strong>อีเมล:</strong> ${formData.email}<br>
+                    <strong>ประเภทคดี:</strong> ${caseTypeText}<br>
+                    <strong>ทนายความที่ต้องการ:</strong> ${lawyerText}<br>
+                    <strong>วันที่นัดหมาย:</strong> ${thaiDate}<br>
+                    <strong>เวลานัดหมาย:</strong> ${formData.preferredTime}<br>
+                    <strong>วิธีรับคำปรึกษา:</strong> ${methodText}
                 `;
                 
                 document.getElementById('appointmentDetails').innerHTML = detailsHtml;
