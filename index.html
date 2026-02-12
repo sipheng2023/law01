@@ -112,7 +112,7 @@
         
         /* Nav language spans (default: Lao shown) */
         .nav-lo { display: inline; }
-        .nav-th { display: none; }
+        .nav-en { display: none; }
         
         /* Hero Section */
         .hero {
@@ -369,23 +369,22 @@
 
             <div class="lang-toggle" aria-hidden="false">
                 <button id="btn-lo" data-lang="lo" class="active">ລາວ</button>
-                <button id="btn-en" data-lang="en">EN</button>
+                <button id="btn-en" data-lang="en">English</button>
+       
+
             </div>
             
-            <div class="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-
-            <nav class="nav">
-                <ul>
-                    <li><a href="index.html"><span class="nav-lo">ໜ້າຫຼັກ</span><span class="nav-th">Home</span></a></li>
-                    <li><a href="#about"><span class="nav-lo">ກ່ຽວກັບພວກເຮົາ</span><span class="nav-th">About</span></a></li>
-                    <li><a href="#"><span class="nav-lo">ບໍລິການ</span><span class="nav-th">Services</span></a></li>
-                 
-                    <li><a href="#"><span class="nav-lo">ຕິດຕໍ່</span><span class="nav-th">Contact</span></a></li>
-                    <li><a href="#contact" class="cta-button"><span class="nav-lo">ນັດຫມາຍປຶກສາຟຣີ</span><span class="nav-th">Book Free Consultation</span></a></li>
-                </ul>
-            </nav>
+               <nav class="nav" aria-label="Primary Navigation">
+                            <ul>
+                                <li><a href="index.html"><span class="nav-lo">ໜ້າຫຼັກ</span><span class="nav-en">Home</span></a></li>
+                                <li><a href="#about"><span class="nav-lo">ກ່ຽວກັບພວກເຮົາ</span></a><a href="#about-en"><span class="nav-en">About</span></a></li>
+                                <li><a href="#services"><span class="nav-lo">ບໍລິການ</span></a><a href="#services-en"><span class="nav-en">Services</span></a></li>
+                                <li><a href="#contact"><span class="nav-lo">ຕິດຕໍ່</span></a><a href="#contact-en"><span class="nav-en">Contact</span></a></li>
+                        
+                            </ul>
+         </nav>
+        
+   
         </div>
     </header>
 
@@ -401,7 +400,7 @@
              
             </div>
         </section>
-<!-- End Hero Section -->
+            <!-- End Hero Section -->
 
         <!-- About Us Section -->
 <section class="about" id="about">
@@ -515,7 +514,7 @@
                              <i class="fas fa-clock"></i>
                              <div>
                                 <h4>ເວລາເຮັດວຽກ</h4>
-                                <p>ຈັນ - ສຸກ: 8:30 - 17:30</p>
+                                <p>ຈັນ - ສຸກ: 8:00 - 17:00</p>
                              </div>
                          </div>
                      </div>
@@ -588,6 +587,7 @@
             </div>
         </footer>
     </main>
+<!--end of lao content-->
 
     <!-- English content -->
     <main id="content-en" class="lang" data-lang="en">
@@ -661,7 +661,7 @@
         <section class="team" id="team-en">
             <div class="container">
                 <div class="section-title">
-                    <h2>Our Legal Team</h2>
+                    <h2>corporate group</h2>
                     <p>Experienced specialist lawyers ready to serve you.</p>
                 </div>
                 <div class="team-grid" id="team-grid-en"></div>
@@ -702,7 +702,7 @@
                             <i class="fas fa-clock"></i>
                             <div>
                                 <h4>Business Hours</h4>
-                                <p>Mon - Fri: 8:30 - 17:30</p>
+                                <p>Mon - Fri: 8:00 - 17:00</p>
                             </div>
                         </div>
                     </div>
@@ -742,17 +742,20 @@
                     <div class="footer-col">
                         <h4>Our Services</h4>
                         <ul>
-                            <li><a href="#services-en">Criminal Law</a></li>
-                            <li><a href="#services-en">Civil & Family Law</a></li>
-                            <li><a href="#services-en">Business & Corporate Law</a></li>
-                            <li><a href="#services-en">Tax Law</a></li>
-                            <li><a href="#services-en">Labor Law</a></li>
+                            <li><a href="#services-en">•	Criminal and Civil law</a></li>
+                            <li><a href="#services-en">•	Business law</a></li>
+                            <li><a href="#services-en">•	Land </a></li>
+                            <li><a href="#services-en">•	Investment and sources of investment</a></li>
+                            <li><a href="#services-en">•	Draft legal documents</a></li>
+                                <li><a href="#services-en">•	Apply visa</a></li>
+                                <li><a href="#services-en">•	Translate</a></li>
+                                <li><a href="#services-en">•	Help collect, track and send outstanding debts to companies, organizations and individuals</a></li>   
                         </ul>
                     </div>
                     <div class="footer-col">
                         <h4>Follow Us</h4>
                         <div class="social-icons">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=100090531551148"><i class="fab fa-facebook-f"></i></a>
                             <a href="#"><i class="fab fa-twitter"></i></a>
                             <a href="#"><i class="fab fa-linkedin-in"></i></a>
                             <a href="#"><i class="fab fa-line"></i></a>
@@ -998,7 +1001,8 @@
                     renderTeamCards('lo');
                 }
                 document.querySelectorAll('.nav-lo').forEach(el=> el.style.display = (lang==='lo') ? 'inline' : 'none');
-                document.querySelectorAll('.nav-th').forEach(el=> el.style.display = (lang==='en') ? 'inline' : 'none');
+                document.querySelectorAll('.nav-en').forEach(el=> el.style.display = (lang==='en') ? 'inline' : 'none');
+
                 try { localStorage.setItem('site-lang',''+lang); } catch(e){}
             }
 
@@ -1040,6 +1044,7 @@
             });
         })();
     </script>
+    <!-- end script -->
     <!-- Form submission script for Google Apps Script -->  
     <script>
 document.getElementById("contactForm").addEventListener("submit", function(e) {
